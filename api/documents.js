@@ -95,7 +95,7 @@ export default async function handler(req, res) {
 
       // Neon serverless doesn't support sql.array() — cast JS arrays to Postgres TEXT[] literal
       const toTextArray = (arr) => arr && arr.length
-        ? `{${arr.map(v => `"${String(v).replace(/"/g, '\\"')}`).join(',')}}`
+        ? `{${arr.map(v => `"${String(v).replace(/"/g, '\\"')}"`).join(',')}}`
         : null
 
       const modulesVal = toTextArray(modules)
